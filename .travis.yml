@@ -3,10 +3,10 @@ language: node_js
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - "npm install --production selenium-standalone@latest -g"
-  - "npm install -g se-interpreter"
-  - "start-selenium"
-
+  - "npm install se-interpreter -g"
+  - "wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.0.jar"
+  - "java -jar selenium-server-standalone-2.43.0.jar &"
+  
   
 script:
   - "se-interpreter ./settingsPage/layoutBuilder_pluginsManagerTest.json"
