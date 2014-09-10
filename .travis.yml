@@ -10,4 +10,4 @@ before_install:
   
   
 script:
-  - "se-interpreter --browser-browserName=phantomjs ./settingsPage/layoutBuilder_pluginsManagerTest.json"
+  - "se-interpreter --start-maximized --browser-browserName=chrome ./settingsPage/layoutBuilder_pluginsManagerTest.json"
