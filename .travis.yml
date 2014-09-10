@@ -10,4 +10,4 @@ before_install:
   
   
 script:
-  - "se-interpreter ./settingsPage/layoutBuilder_pluginsManagerTest.json"
+  - "se-interpreter --browser-browserName=phantomjs ./settingsPage/layoutBuilder_pluginsManagerTest.json"
