@@ -3,9 +3,11 @@ language: node_js
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  - sleep 3
   - "npm install se-interpreter -g"
   - "wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.0.jar"
   - "java -jar selenium-server-standalone-2.43.0.jar &"
+  - sleep 3
   
   
 script:
