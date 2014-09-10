@@ -5,8 +5,8 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
   - "npm install --production selenium-standalone@latest -g"
   - "npm install -g se-interpreter"
+  - "start-selenium"
 
   
 script:
-  - "start-selenium"
   - "se-interpreter ./settingsPage/layoutBuilder_pluginsManagerTest.json"
