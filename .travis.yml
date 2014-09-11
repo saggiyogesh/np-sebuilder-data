@@ -1,9 +1,6 @@
 language: node_js
 
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3
   - "npm install string wd glob optimist"
   - "wget https://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar"
   - "java -jar selenium-server-standalone-2.39.0.jar &"
@@ -11,4 +8,4 @@ before_install:
   
   
 script:
-  - "node 1.js"
+  - "node se-interpreter.js --browser-browserName=phantomjs settingsPage/layoutBuilder_pluginsManagerTest.json"
