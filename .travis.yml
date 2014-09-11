@@ -11,4 +11,4 @@ before_install:
   
   
 script:
-  - "node se-interpreter.js tttt.json"
+  - "node se-interpreter.js settingsPage/layoutBuilder_pluginsManagerTest.json"
