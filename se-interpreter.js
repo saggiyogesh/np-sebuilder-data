@@ -23,7 +23,7 @@ var glob = require('glob');
 var util = require('util');
 var pathLib = require('path');
 var fs = require('fs');
-var colors = require('colors');
+//var colors = require('colors');
 //var libxml = require('libxmljs');
 
 // Common functionality for assert/verify/waitFor/store step types. Only the code for actually
@@ -280,8 +280,8 @@ TestRun.prototype.run = function(runCallback, stepCallback, webDriverToUse, defa
                             testRun.end(function(endInfo) { runCallback({ 'success': testRun.success && endInfo.success, 'error': testRun.lastError || endInfo.error }); });
                         }
                     });
-                }
-                this.wd.maximize(null, function(){
+                }				
+                testRun.wd.maximize(null, function(){
                     runStep();
                 })
             },
