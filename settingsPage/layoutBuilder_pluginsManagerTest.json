@@ -41,7 +41,7 @@
       "type": "clickElement",
       "locator": {
         "type": "xpath",
-        "value": "//li[@class='dropdown']//a[.='testUserAdmin ']"
+        "value": "//li[@class='dropdown']//a[.='testUserAdmin']"
       }
     },
     {
