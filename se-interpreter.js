@@ -242,7 +242,7 @@ TestRun.prototype.end = function(callback) {
         callback(info);
     }
 };
-
+var i = 1;
 TestRun.prototype.run = function(runCallback, stepCallback, webDriverToUse, defaultVars) {
     var testRun = this;
     runCallback = runCallback || function() {};
@@ -268,23 +268,34 @@ TestRun.prototype.run = function(runCallback, stepCallback, webDriverToUse, defa
 						
 						testRun.wd.maximize(null, function(err){
 							if(err) throw err;
-							testRun.next(function(info) {
-								stepCallback(info);
-								if (info.error) {
-									testRun.end(function(endInfo) {
-										if (endInfo.error) {
-											info.additionalError = endInfo.error;
-										}
-										runCallback({'success': false, 'error': info.error});
+							testRun.wd.takeScreenshot(function(err, png){
+								if(err) throw err
+								if(png) {
+									var base64Data = png.replace(/^data:image\/png;base64,/, "");
+									require("fs").writeFile(i + ".png", base64Data, 'base64', function(err) {
+										console.log(err);
+										
 									});
-									return;
 								}
-								if (testRun.hasNext()) {
-									runStep();
-								} else {
-									testRun.end(function(endInfo) { runCallback({ 'success': testRun.success && endInfo.success, 'error': testRun.lastError || endInfo.error }); });
-								}
-							});
+								testRun.next(function(info) {
+									stepCallback(info);
+									if (info.error) {
+										testRun.end(function(endInfo) {
+											if (endInfo.error) {
+												info.additionalError = endInfo.error;
+											}
+											runCallback({'success': false, 'error': info.error});
+										});
+										return;
+									}
+									if (testRun.hasNext()) {
+										runStep();
+									} else {
+										testRun.end(function(endInfo) { runCallback({ 'success': testRun.success && endInfo.success, 'error': testRun.lastError || endInfo.error }); });
+									}
+								});
+							
+							})
 						});					
 					});	
                     
