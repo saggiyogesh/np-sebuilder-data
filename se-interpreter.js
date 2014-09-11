@@ -263,33 +263,33 @@ TestRun.prototype.run = function(runCallback, stepCallback, webDriverToUse, defa
                     return;
                 }
                 function runStep() {
-                    testRun.next(function(info) {
-                        stepCallback(info);
-                        if (info.error) {
-                            testRun.end(function(endInfo) {
-                                if (endInfo.error) {
-                                    info.additionalError = endInfo.error;
-                                }
-                                runCallback({'success': false, 'error': info.error});
-                            });
-                            return;
-                        }
-                        if (testRun.hasNext()) {
-                            runStep();
-                        } else {
-                            testRun.end(function(endInfo) { runCallback({ 'success': testRun.success && endInfo.success, 'error': testRun.lastError || endInfo.error }); });
-                        }
-                    });
-                }	
-				testRun.wd.setWindowSize(1280, 800, function(err){
-					if(err) throw err;
-					
-					testRun.wd.maximize(null, function(err){
+					testRun.wd.setWindowSize(1280, 800, function(err){
 						if(err) throw err;
-						runStep();
-					});
-				
-				});				
+						
+						testRun.wd.maximize(null, function(err){
+							if(err) throw err;
+							testRun.next(function(info) {
+								stepCallback(info);
+								if (info.error) {
+									testRun.end(function(endInfo) {
+										if (endInfo.error) {
+											info.additionalError = endInfo.error;
+										}
+										runCallback({'success': false, 'error': info.error});
+									});
+									return;
+								}
+								if (testRun.hasNext()) {
+									runStep();
+								} else {
+									testRun.end(function(endInfo) { runCallback({ 'success': testRun.success && endInfo.success, 'error': testRun.lastError || endInfo.error }); });
+								}
+							});
+						});					
+					});	
+                    
+                }
+				runStep();						
                 
             },
             webDriverToUse
