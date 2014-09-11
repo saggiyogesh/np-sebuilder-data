@@ -242,7 +242,7 @@ TestRun.prototype.end = function(callback) {
         callback(info);
     }
 };
-var i = 1;
+var i = 0;
 TestRun.prototype.run = function(runCallback, stepCallback, webDriverToUse, defaultVars) {
     var testRun = this;
     runCallback = runCallback || function() {};
@@ -263,6 +263,7 @@ TestRun.prototype.run = function(runCallback, stepCallback, webDriverToUse, defa
                     return;
                 }
                 function runStep() {
+					i++;
 					testRun.wd.setWindowSize(1280, 800, function(err){
 						if(err) throw err;
 						
