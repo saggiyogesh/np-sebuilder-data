@@ -280,10 +280,17 @@ TestRun.prototype.run = function(runCallback, stepCallback, webDriverToUse, defa
                             testRun.end(function(endInfo) { runCallback({ 'success': testRun.success && endInfo.success, 'error': testRun.lastError || endInfo.error }); });
                         }
                     });
-                }				
-                testRun.wd.maximize(null, function(){
-                    runStep();
-                })
+                }	
+				testRun.wd.setWindowSize(1280, 800, function(err){
+					if(err) throw err;
+					
+					testRun.wd.maximize(null, function(err){
+						if(err) throw err;
+						runStep();
+					});
+				
+				});				
+                
             },
             webDriverToUse
         );
