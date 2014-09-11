@@ -11,4 +11,4 @@ before_install:
   
   
 script:
-  - "node se-interpreter.js --browser-browserName=phantomjs settingsPage/layoutBuilder_pluginsManagerTest.json"
+  - "node 1.js"
