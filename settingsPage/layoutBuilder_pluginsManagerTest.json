@@ -6,14 +6,7 @@
     {
       "type": "get",
       "url": "http://demo.nodeportal.com/home"
-    },
-    {
-      "type": "clickElement",
-      "locator": {
-        "type": "link text",
-        "value": "Login"
-      }
-    },
+    },    
     {
       "type": "setElementText",
       "locator": {
