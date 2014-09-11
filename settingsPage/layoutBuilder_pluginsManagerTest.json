@@ -6,8 +6,8 @@
     {
       "type": "get",
       "url": "http://demo.nodeportal.com/home"
-    },    
-    {
+    },
+	{
       "type": "setElementText",
       "locator": {
         "type": "id",
