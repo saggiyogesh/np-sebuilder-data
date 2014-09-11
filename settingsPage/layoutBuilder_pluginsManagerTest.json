@@ -7,13 +7,13 @@
       "type": "get",
       "url": "http://demo.nodeportal.com/home"
     },
-	{
+    {
       "type": "clickElement",
       "locator": {
         "type": "link text",
         "value": "Login"
       }
-    },    
+    },
     {
       "type": "setElementText",
       "locator": {
@@ -40,8 +40,8 @@
     {
       "type": "clickElement",
       "locator": {
-        "type": "link text",
-        "value": "testUserAdmin"
+        "type": "xpath",
+        "value": "//li[@class='dropdown']//a[.='testUserAdmin ']"
       }
     },
     {
@@ -471,5 +471,5 @@
     "source": "none"
   },
   "inputs": [],
-  "timeoutSeconds": 200
+  "timeoutSeconds": 20
 }
