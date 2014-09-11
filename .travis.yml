@@ -3,11 +3,11 @@ language: node_js
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 
-  - "npm install"
+  - sleep 1
+  - "npm install string wd glob optimist"
   - "wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.0.jar"
   - "java -jar selenium-server-standalone-2.43.0.jar &"
-  - sleep 3
+  - sleep 1
   
   
 script:

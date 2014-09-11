@@ -23,7 +23,7 @@ var glob = require('glob');
 var util = require('util');
 var pathLib = require('path');
 var fs = require('fs');
-var colors = require('colors');
+//var colors = require('colors');
 //var libxml = require('libxmljs');
 
 // Common functionality for assert/verify/waitFor/store step types. Only the code for actually
