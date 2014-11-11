@@ -38,10 +38,17 @@
       }
     },
     {
+      "type": "waitForElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": ".navbar-fixed-top .pull-right li.dropdown a.dropdown-toggle"
+      }
+    },
+    {
       "type": "clickElement",
       "locator": {
-        "type": "xpath",
-        "value": "//li[@class='dropdown']//a[.='testUserAdmin']"
+        "type": "css selector",
+        "value": ".navbar-fixed-top .pull-right li.dropdown a.dropdown-toggle"
       }
     },
     {
