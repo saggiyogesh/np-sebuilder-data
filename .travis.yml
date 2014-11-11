@@ -4,6 +4,9 @@ before_install:
   - "npm install string wd glob optimist"
   - "wget https://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar"
   - "java -jar selenium-server-standalone-2.39.0.jar &"
+  - "git clone https://github.com/saggiyogesh/nodeportal.git"
+  - "cd nodeportal"
+  - "node "
   - sleep 3
   
   
