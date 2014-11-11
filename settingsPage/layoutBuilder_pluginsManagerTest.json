@@ -5,7 +5,7 @@
   "steps": [
     {
       "type": "get",
-      "url": "http://demo.nodeportal.com/home"
+      "url": "http://localhost:8080/home"
     },
     {
       "type": "clickElement",
@@ -295,6 +295,13 @@
       }
     },
     {
+      "type": "waitForElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "#addPlugins_Modal .modal-body"
+      }
+    },
+    {
       "type": "setElementSelected",
       "locator": {
         "type": "id",
@@ -478,5 +485,5 @@
     "source": "none"
   },
   "inputs": [],
-  "timeoutSeconds": 999999
+  "timeoutSeconds": 100
 }
