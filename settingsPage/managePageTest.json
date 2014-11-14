@@ -1,0 +1,281 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://localhost:8080/home"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "login_email"
+      },
+      "text": "testadmin@nodeportal.com"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "login_password"
+      },
+      "text": "admin"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "login_submit_login"
+      }
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/app/settings"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Site Pages"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "i.icon-edit"
+      }
+    },
+    {
+      "type": "setElementSelected",
+      "locator": {
+        "type": "name",
+        "value": "managePermissions[7___VIEW]"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "button.btn.btn-primary"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "div.alert.alert-success  > button.close"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "div.modal-footer > button.btn"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "next"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "managePage_name"
+      },
+      "text": "new page"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "managePage_friendlyURL"
+      },
+      "text": "new"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "managePage_submit_update"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": ".managePage .alert-success button"
+      }
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/new"
+    },
+    {
+      "type": "verifyTitle",
+      "title": "new page"
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/app/settings"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Site Pages"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "new page"
+      }
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/app/logout"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "login_email"
+      },
+      "text": "test@nodeportal.com"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "login_password"
+      },
+      "text": "test"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "login_submit_login"
+      }
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/app/settings"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Site Pages"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "new page"
+      }
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/app/logout"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "login_email"
+      },
+      "text": "testadmin@nodeportal.com"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "login_password"
+      },
+      "text": "admin"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "login_submit_login"
+      }
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/app/settings"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Site Pages"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "new page"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "#edit > i.icon-edit"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "managePage_name"
+      },
+      "text": "new page1"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "managePage_friendlyURL"
+      },
+      "text": "/new1"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "managePage_submit_update"
+      }
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/new1"
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/new"
+    },
+    {
+      "type": "get",
+      "url": "http://localhost:8080/app/settings"
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
